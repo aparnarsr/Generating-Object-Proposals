@@ -33,24 +33,8 @@ def findIou(bA, bB):
 # In[ ]:
 
 
-# im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/000480.jpg")
-# im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/001324.jpg")
 im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/002129.jpg")
-# im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/002268.jpg")
-# im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/003129.jpg")
-# im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/004085.jpg")
-# im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/004708.jpg")
-# im=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/007346.jpg")
-
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/000480.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/001324.xml")
 xtree = et.parse(os.getcwd()+"/Downloads/Annotations/002129.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/002268.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/003129.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/004085.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/004708.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/007346.xml")
-
 xroot = xtree.getroot()
 df=[]
 for dims in xroot.findall('object/bndbox'):
@@ -61,9 +45,7 @@ for dims in xroot.findall('object/bndbox'):
         df.append([xmin,xmax,ymin,ymax])
 len(df)
 
-
 # In[ ]:
-
 
 model = os.getcwd()+'/Downloads/model.yml.gz'
 src = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
