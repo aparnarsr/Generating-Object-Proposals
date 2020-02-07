@@ -11,24 +11,8 @@ import xml.etree.ElementTree as et
 
 # In[ ]:
 
-
-# img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/000480.jpg")
 img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/001324.jpg")
-# img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/002129.jpg")
-# img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/002268.jpg")
-# img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/003129.jpg")
-# img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/004085.jpg")
-# img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/004708.jpg")
-# img1=cv2.imread(os.getcwd()+"/Downloads/JPEGImages/007346.jpg")
-
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/000480.xml")
 xtree = et.parse(os.getcwd()+"/Downloads/Annotations/001324.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/002129.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/002268.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/003129.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/004085.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/004708.xml")
-# xtree = et.parse(os.getcwd()+"/Downloads/Annotations/007346.xml")
 xroot = xtree.getroot()
 df=[]
 for dims in xroot.findall('object/bndbox'):
